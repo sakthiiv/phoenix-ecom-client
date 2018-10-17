@@ -1,19 +1,58 @@
 {
-  "name": "phoenix-ecom-client",
+  "name": "phoenix_ecom",
   "version": "1.0.0",
-  "description": "phoenix-ecom-client",
+  "description": "Ecom site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "webpack -d && webpack-dev-server --inline --hot",
+    "dev": "webpack --config webpack.config.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sakthiiv/phoenix-ecom-client.git"
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "css-loader": "^0.28.9",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-to-json": "^3.3.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jest": "^23.6.0",
+    "node-sass": "^4.7.2",
+    "react-hot-loader": "^3.1.3",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.1",
+    "uglify-js-plugin": "0.0.6",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   },
-  "author": "Phoenix Team",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sakthiiv/phoenix-ecom-client/issues"
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "debug": "~2.6.9",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.1.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
+    "serve-favicon": "~2.4.5"
   },
-  "homepage": "https://github.com/sakthiiv/phoenix-ecom-client#readme"
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./src/setupTests.js"
+    ]
+  },
+  "author": "",
+  "license": "ISC"
 }
