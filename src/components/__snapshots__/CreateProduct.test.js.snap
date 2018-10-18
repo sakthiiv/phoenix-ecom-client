@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateProduct renders correctly 1`] = `
+<div>
+  <h1>
+    Create Product
+  </h1>
+  <div
+    className="col-md-6"
+  >
+    <form>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="name"
+        >
+          Enter username
+        </label>
+        <input
+          className="form-control"
+          id="name"
+          placeholder="Enter Username"
+          type="text"
+        />
+      </div>
+      <span
+        className="asda"
+      >
+        Please enter username.
+      </span>
+      <button
+        className="btn btn-success"
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+`;

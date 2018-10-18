@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin renders correctly 1`] = `
+<div>
+  <div>
+    <nav>
+      <ul>
+        <li>
+          <Link
+            replace={false}
+            to="/create-category"
+          >
+            Create Category
+          </Link>
+        </li>
+        <li>
+          <Link
+            replace={false}
+            to="/create-product"
+          >
+            Create Product
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;

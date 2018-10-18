@@ -1,30 +1,6 @@
-
-.movies_container{
-  .movies_list {
-    width:60%;
-    float:left;
-    ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      li {
-        width: 25%;
-        border: 1px solid #666;
-        img {
-          width: 100%;
-          height: 200px;
-        }
-      }
-    }
-    select, input, button {
-      color: black;
-    }
-  }
-  .movie_detail {
-    width:40%;
-    float:left;
-    padding: 20px;
-  }
+.add-sub-cat-btn {
+  color:black;
+}
+.sub-cat-item {
+  color: white;
 }

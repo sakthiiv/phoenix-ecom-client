@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main renders correctly 1`] = `
+<main>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/admin"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/create-category"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/create-product"
+    />
+  </Switch>
+</main>
+`;
