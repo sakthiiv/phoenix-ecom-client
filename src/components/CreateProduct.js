@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Admin extends React.Component {
+class CreateProduct extends React.Component {
     state = {
       pname: "",
       pdescription: "",
@@ -135,4 +135,4 @@ class Admin extends React.Component {
       )
     }
   }
-  export default Admin
+  export default CreateProduct

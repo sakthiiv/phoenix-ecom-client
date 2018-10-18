@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Admin extends React.Component {
+class CreateCategory extends React.Component {
     state = {
       subcatsDom: [],
       cname: "",
@@ -9,23 +9,12 @@ class Admin extends React.Component {
     }
   handleChange = (e) => {
       if (e.target.className.indexOf('name') !== -1) {
-        // let subcats = [...this.state.subcats, {name:e.target.value}]
-        // subcats[e.target.dataset.id][e.target.className] = e.target.value
-        // this.setState({ subcats }, () => console.log(this.state.subcats))
         let newSub = {
             name:e.target.value
         }
         this.setState(prevState => ({
             subcats: [...prevState.subcats, newSub]
         }));
-        // let newelement = {
-        //     id: Math.random()
-        //       .toString(36)
-        //       .substr(2, 9),
-        //     author: this.state.author,
-        //     comment: this.state.comment
-        //   };
-          
       } else {
         this.setState({ [e.target.name]: e.target.value })
       }
@@ -54,8 +43,9 @@ class Admin extends React.Component {
                     <label htmlFor="description">Example description of the category</label>
                     <textarea className="form-control" name="description" id="description" rows="3" defaultValue={description}></textarea>
             </div>
-
-            <button className="add-sub-cat-btn btn-success" onClick={this.addSubCat}>Add new subcategory</button>
+            <div className="form-group">
+                <button className="add-sub-cat-btn btn-success" onClick={this.addSubCat}>Add subcategory</button>
+            </div>
             {
                 subcatsDom.map((val, idx)=> {
                 let subCatId = `subcat-${idx}`
@@ -82,4 +72,4 @@ class Admin extends React.Component {
       )
     }
   }
-  export default Admin
+  export default CreateCategory

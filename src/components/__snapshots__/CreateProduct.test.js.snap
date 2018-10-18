@@ -1,41 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateProduct renders correctly 1`] = `
-<div>
+<div
+  className="col-md-6"
+>
   <h1>
-    Create Product
+    Create product
   </h1>
-  <div
-    className="col-md-6"
+  <form
+    onChange={[Function]}
+    onSubmit={[Function]}
   >
-    <form>
-      <div
-        className="form-group"
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pname"
       >
-        <label
-          htmlFor="name"
+        Enter name of the categpry
+      </label>
+      <input
+        className="form-control"
+        defaultValue=""
+        id="pname"
+        name="pname"
+        placeholder="Enter name of the product"
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pdescription"
+      >
+        Example description of the category
+      </label>
+      <textarea
+        className="form-control"
+        defaultValue=""
+        id="pdescription"
+        name="pdescription"
+        rows="3"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="price"
+      >
+        Enter name of the categpry
+      </label>
+      <input
+        className="form-control"
+        defaultValue=""
+        id="price"
+        name="price"
+        placeholder="Enter price of the product"
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="categoriesecom"
+      >
+        Select category
+      </label>
+      <select
+        className="form-control"
+        id="categoriesecom"
+        name="categoriesecom"
+      >
+        <option
+          key="Electronics"
         >
-          Enter username
-        </label>
-        <input
-          className="form-control"
-          id="name"
-          placeholder="Enter Username"
-          type="text"
-        />
+          Electronics
+        </option>
+        <option
+          key="Clothes"
+        >
+          Clothes
+        </option>
+      </select>
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="file"
+        name="file"
+        type="file"
+      />
+      <div
+        className="img-preview"
+      >
+        <div
+          className="previewText"
+        >
+          Please select an image.
+        </div>
       </div>
-      <span
-        className="asda"
-      >
-        Please enter username.
-      </span>
-      <button
-        className="btn btn-success"
-        type="submit"
-      >
-        Login
-      </button>
-    </form>
-  </div>
+    </div>
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
 </div>
 `;
