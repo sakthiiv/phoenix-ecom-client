@@ -73,9 +73,9 @@ class ProductList extends React.Component {
 
     return (
       <div className="columns" key={index}>
-        {products.map(product => {
+        {products.map((product, pIndex) => {
           return product ? (
-            <Col sm="6">
+            <Col sm="6" key={"product_col_" + pIndex}>
               <Card>
                 <CardBody>
                   <div className="cart-title-container">

@@ -1,26 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders correctly 1`] = `
-<header>
-  <nav>
-    <ul>
-      <li>
-        <Link
-          replace={false}
-          to="/"
-        >
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link
-          replace={false}
-          to="/admin"
-        >
-          Admin
-        </Link>
-      </li>
-    </ul>
-  </nav>
-</header>
+<Uncontrolled(Navbar)
+  bsStyle="default"
+>
+  <NavbarHeader>
+    <NavbarBrand>
+      <a
+        href="/"
+      >
+        PHOENIX
+      </a>
+    </NavbarBrand>
+  </NavbarHeader>
+  <Nav
+    bsClass="nav"
+    justified={false}
+    pullLeft={false}
+    pullRight={true}
+    stacked={false}
+  >
+    <NavItem
+      active={false}
+      disabled={false}
+      eventKey={1}
+      href="/category-list"
+    >
+      Categories
+    </NavItem>
+    <NavItem
+      active={false}
+      disabled={false}
+      eventKey={2}
+      href="/product-list"
+    >
+      Products
+    </NavItem>
+  </Nav>
+</Uncontrolled(Navbar)>
 `;
