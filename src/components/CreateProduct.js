@@ -7,7 +7,8 @@ class CreateProduct extends React.Component {
       price:"",
       image: null,
       imagePreviewUrl: null,
-      categoriesecom:null,
+      categoriesecom: 1,
+      subcategoriesecom: 2,
       categories:['Electronics', 'Clothes'],
       subcategories:[]
     }
@@ -57,18 +58,32 @@ class CreateProduct extends React.Component {
     data.append('name', this.state.pname);
     data.append('description', this.state.pdescription);
     data.append('price', this.state.price);
-    data.append('image', this.state.image);
+    data.append('image', this.state.imagePreviewUrl);
     data.append('categoryId', this.state.categoriesecom);
     data.append('subCategoryId', this.state.subcategoriesecom);
 
-    
-    h.Accept = 'application/json'; //if you expect JSON response
-    fetch('/api/item', {
-      method: 'POST',
-      headers: h,
-      body: data
-    }).then(response => {
-    }).catch(err => {
+    var productObj = {
+        name: this.state.pname,
+        description: this.state.pdescription,
+        price: this.state.price,
+        // image: this.state.imagePreviewUrl,
+        categoryId: this.state.categoriesecom,
+        subCategoryId: this.state.subcategoriesecom
+    }
+    fetch('http://10.132.21.60:8080/api/v1/product', {
+        method: "POST",
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body:productObj
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+         console.log(responseJson);
+    })
+    .catch((error) => {
+        console.log(error);
     });
   }
 
@@ -94,18 +109,18 @@ class CreateProduct extends React.Component {
             <form onSubmit={this.handleSubmit} onChange={this.handleChange} >
 
                 <div className="form-group">
-                    <label htmlFor="pname">Enter name of the categpry</label>
-                    <input id='pname' type="text" name="pname" placeholder='Enter name of the product' className="form-control" defaultValue={pname}></input>
+                    <label htmlFor="pname">Enter name of the product</label>
+                    <input id='pname' type="text" name="pname" placeholder='Enter name of the product' className="form-control" defaultValue={pname} required></input>
                 </div>
 
                 <div className="form-group">
-                        <label htmlFor="pdescription">Example description of the category</label>
-                        <textarea className="form-control" id="pdescription" name="pdescription" rows="3" defaultValue={pdescription}></textarea>
+                        <label htmlFor="pdescription">Example description of the product</label>
+                        <textarea className="form-control" id="pdescription" name="pdescription" rows="3" defaultValue={pdescription} required></textarea>
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="price">Enter name of the categpry</label>
-                    <input id='price' name="price" type="text" placeholder='Enter price of the product' className="form-control" defaultValue={price}></input>
+                    <label htmlFor="price">Enter price of the product</label>
+                    <input id='price' name="price" type="text" placeholder='Enter price of the product' className="form-control" defaultValue={price} required></input>
                 </div>
 
                 <div className="form-group">

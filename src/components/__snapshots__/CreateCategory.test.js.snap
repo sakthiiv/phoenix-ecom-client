@@ -17,7 +17,7 @@ exports[`CreateCategory renders correctly 1`] = `
       <label
         htmlFor="cname"
       >
-        Enter name of the categpry
+        Enter name of the category
       </label>
       <input
         className="form-control"
@@ -25,6 +25,7 @@ exports[`CreateCategory renders correctly 1`] = `
         id="cname"
         name="cname"
         placeholder="Enter name of the category"
+        required={true}
         type="text"
       />
     </div>
@@ -41,18 +42,40 @@ exports[`CreateCategory renders correctly 1`] = `
         defaultValue=""
         id="description"
         name="description"
+        required={true}
         rows="3"
       />
     </div>
     <div
       className="form-group"
     >
-      <button
+      <input
         className="add-sub-cat-btn btn-success"
         onClick={[Function]}
+        type="button"
+        value="Add subcategory"
+      />
+    </div>
+    <div
+      key="0"
+    >
+      <div
+        className="form-group sub-cat-item"
       >
-        Add subcategory
-      </button>
+        <label
+          htmlFor="subcat-0"
+        >
+          Sub Category  1
+        </label>
+        <input
+          className="name"
+          data-id={0}
+          defaultValue=""
+          id="subcat-0"
+          name="subcat-0"
+          type="text"
+        />
+      </div>
     </div>
     <input
       type="submit"
