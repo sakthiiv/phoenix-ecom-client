@@ -52,31 +52,32 @@ class CreateProduct extends React.Component {
         }));
     }
   handleSubmit = (e) => { e.preventDefault() 
-    // console.log('PHOTO:', newItem.image);
     const h = {}; //headers
-    let data = new FormData();
-    data.append('name', this.state.pname);
-    data.append('description', this.state.pdescription);
-    data.append('price', this.state.price);
-    data.append('image', this.state.imagePreviewUrl);
-    data.append('categoryId', this.state.categoriesecom);
-    data.append('subCategoryId', this.state.subcategoriesecom);
+    // let data = new FormData();
+    // data.append('name', this.state.pname);
+    // data.append('description', this.state.pdescription);
+    // data.append('price', this.state.price);
+    // data.append('image', this.state.imagePreviewUrl);
+    // data.append('categoryId', this.state.categoriesecom);
+    // data.append('subCategoryId', this.state.subcategoriesecom);
 
     var productObj = {
         name: this.state.pname,
         description: this.state.pdescription,
         price: this.state.price,
-        // image: this.state.imagePreviewUrl,
+        base64ProductImage: this.state.imagePreviewUrl,
         categoryId: this.state.categoriesecom,
-        subCategoryId: this.state.subcategoriesecom
+        subCategoryId: this.state.subcategoriesecom,
+        isValid:"true"
     }
+    console.log(JSON.stringify(productObj));
     fetch('http://10.132.21.60:8080/api/v1/product', {
         method: "POST",
         headers:{
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-        body:productObj
+        body:JSON.stringify(productObj)
     })
     .then((response) => response.json())
     .then((responseJson) => {

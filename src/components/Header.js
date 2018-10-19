@@ -7,7 +7,7 @@ const Header = () => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="/">PHOENIX</a>
+        <a href="/admin">PHOENIX</a>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav pullRight>

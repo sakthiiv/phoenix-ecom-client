@@ -4,7 +4,7 @@ class CreateCategory extends React.Component {
     state = {
       cname: "",
       description: "",
-      subcats:[{name:""}]
+      subcats:[{name:"",description:""}]
     }
   handleChange = (e) => {
     if (["name"].includes(e.target.className) ) {
@@ -22,6 +22,26 @@ class CreateCategory extends React.Component {
     }
   handleSubmit = (e) => { e.preventDefault() 
     console.log(this.state);
+    var categoryObject = {
+        description:this.state.description,
+        name: this.state.cname,
+        subCategory:this.state.subcats
+    }
+    console.log(categoryObject);
+    fetch('http://10.132.21.159:8080/category', {
+        method: "POST",
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(categoryObject)
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+         console.log(responseJson);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
   }
   render() {
       let {cname, description, subcats} = this.state
