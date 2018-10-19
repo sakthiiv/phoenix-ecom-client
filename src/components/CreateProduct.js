@@ -71,7 +71,7 @@ class CreateProduct extends React.Component {
         isValid:"true"
     }
     console.log(JSON.stringify(productObj));
-    fetch('http://10.132.21.60:8080/api/v1/product', {
+    fetch('http://10.132.20.55:8080/api/v1/product', {
         method: "POST",
         headers:{
             'Accept': 'application/json',

@@ -16,6 +16,16 @@ exports[`Main renders correctly 1`] = `
     <Route
       component={[Function]}
       exact={true}
+      path="/user"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/userproductList"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
       path="/create-category"
     />
     <Route

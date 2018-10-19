@@ -7,7 +7,7 @@ exports[`Header renders correctly 1`] = `
   <NavbarHeader>
     <NavbarBrand>
       <a
-        href="/"
+        href="/admin"
       >
         PHOENIX
       </a>
