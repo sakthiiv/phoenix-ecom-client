@@ -2,10 +2,6 @@
   color: black;
 }
 
-.sub-cat-item {
-  color: white;
-}
-
 body {
   background-color: #fff;
   color: #000000;
@@ -15,6 +11,10 @@ body {
     width: 80%;
     margin: 0 auto;
     border-bottom: 1px solid #ccc;
+}
+
+.form-control, input, textarea {
+  border: 1px solid #ccc !important;
 }
 
 .card-body {
