@@ -1,15 +1,6 @@
 import React, { Component } from "react";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-  Row,
-  Col
-} from "reactstrap";
+import category from "../api/category";
+import { Card, CardText, CardBody, Row, Col } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class CategoryList extends React.Component {
@@ -18,30 +9,12 @@ class CategoryList extends React.Component {
     this.state = { categories: [] };
   }
 
-  componentDidMount() {
-    // var myRequest = new Request(website);
-    // let movies = [];
-    // fetch(myRequest)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     this.setState({ movies: data });
-    //   });
-    this.setState({
-      categories: [
-        {
-          name: "Electronics",
-          description: "Electronics descriptions goes here."
-        },
-        {
-          name: "Clothes",
-          description: "Clothes descriptions goes here."
-        }
-      ]
-    });
+  async componentDidMount() {
+    const categories = await category.getAll();
+    this.setState({ categories });
   }
 
   render() {
-    console.log(this.state.categories);
     return (
       <div>
         {this.state.categories.map((c, i) => {

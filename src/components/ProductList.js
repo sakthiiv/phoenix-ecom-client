@@ -1,15 +1,6 @@
 import React, { Component } from "react";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-  Row,
-  Col
-} from "reactstrap";
+import product from "../api/product";
+import { Card, CardText, CardBody, Row, Col } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class ProductList extends React.Component {
@@ -18,53 +9,9 @@ class ProductList extends React.Component {
     this.state = { products: [] };
   }
 
-  componentDidMount() {
-    // var myRequest = new Request(website);
-    // let movies = [];
-    // fetch(myRequest)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     this.setState({ movies: data });
-    //   });
-    this.setState({
-      products: [
-        {
-          name: "TV",
-          price: "18,000",
-          category: "Electronics",
-          description: "Tv Description goes here.",
-          image: ""
-        },
-        {
-          name: "Mobile",
-          price: "10,000",
-          category: "Electronics",
-          description: "Mobile descriptions goes here.",
-          image: ""
-        },
-        {
-          name: "Toasters",
-          price: "10,000",
-          category: "Electronics",
-          description: "Toasters descriptions goes here.",
-          image: ""
-        },
-        {
-          name: "T-Shirts",
-          price: "",
-          category: "Clothing",
-          description: "Clothing descriptions goes here.",
-          image: ""
-        },
-        {
-          name: "Kids wear",
-          price: "",
-          category: "Clothing",
-          description: "Clothing descriptions goes here.",
-          image: ""
-        }
-      ]
-    });
+  async componentDidMount() {
+    const products = await product.getAll();
+    this.setState({ products });
   }
 
   renderProducts(index) {
