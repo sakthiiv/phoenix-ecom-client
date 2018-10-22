@@ -10,5 +10,8 @@ export default {
   getById: productId => {},
   getAll: () => {
     return fetch.get(domainPath);
+  },
+  getAllByCatId: (catId) => {
+    return fetch.get('productlist/' + catId);
   }
 };

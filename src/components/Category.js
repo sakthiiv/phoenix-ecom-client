@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect, Link } from "react-router-dom";
 import {
   Card,
   CardText,
@@ -22,7 +23,7 @@ class Category extends React.Component {
   render() {
     const {category} = this.props; 
     return (
-        <a href="" onClick={this.redirectToPList}>
+        <Link to={{ pathname: '/userproductList', state: { category: category} }}>
             <div className="list-container" key={category.id}>
                 <Row>
                     <Col sm="12">
@@ -41,7 +42,7 @@ class Category extends React.Component {
                     </Col>
                 </Row>
             </div>
-        </a>
+        </Link>
     );
   }
 }

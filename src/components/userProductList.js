@@ -13,52 +13,14 @@ import {
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductItem from "./ProductItem";
+import product from "../api/product";
 
 class UserProductList extends React.Component {
   constructor() {
     super();
-    this.state = { products: [
-        {
-         id:"1111",
-          name: "TV",
-          price: "18,000",
-          category: "Electronics",
-          description: "Tv Description goes here.",
-          image: ""
-        },
-        {
-          id:"2222",
-          name: "Mobile",
-          price: "10,000",
-          category: "Electronics",
-          description: "Mobile descriptions goes here.",
-          image: ""
-        },
-        {
-          id:"3333",
-          name: "Toasters",
-          price: "10,000",
-          category: "Electronics",
-          description: "Toasters descriptions goes here.",
-          image: ""
-        }
-      ] };
+    this.state = { products: null };
   }
 
-  componentDidMount() {
-    // var myRequest = new Request(website);
-    // let movies = [];
-    // fetch(myRequest)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     this.setState({ movies: data });
-    //   });
-    
-  }
-  redirectToPList = () => {
-    alert('called');
-    return <Redirect to='/product-detail' />
-  }
   renderProducts(product, index) {
     // two albums at a time - the current and previous item
     let products = [this.state.products[index - 1], this.state.products[index]];
@@ -67,7 +29,7 @@ class UserProductList extends React.Component {
       <div className="columns" key={index}>
         {products.map((product, pIndex) => {
           return product ? (
-            <ProductItem key={product.id} productItem = {product} redirectToPList={this.redirectToPList}/>
+            <ProductItem key={product.id} productItem = {product}/>
           ) : (
             <div />
           );
@@ -75,8 +37,23 @@ class UserProductList extends React.Component {
       </div>
     );
   }
-
+  
+  fetchProductList = (categoryId) => {
+    product
+    .getAllByCatId(categoryId)
+    .then(responseJson => {
+      // this.setState({ products: responseJson });
+      console.log(responseJson);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
   render() {
+    const {category} = this.props.location.state;
+    if(category.id) {
+      this.fetchProductList(category.id);
+    }
     return (
       <div>
         {this.state.products.map((p, i) => {
