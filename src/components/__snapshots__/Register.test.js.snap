@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main renders correctly 1`] = `
+<div
+  className="hidden"
+>
+  <p>
+    You must register
+  </p>
+  <form
+    onChange={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="cemail"
+      >
+        Enter email
+      </label>
+      <input
+        className="form-control"
+        id="uemail"
+        name="uemail"
+        placeholder="Enter email address"
+        required={true}
+        type="email"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="uname"
+      >
+        Enter username
+      </label>
+      <input
+        className="form-control"
+        id="uname"
+        name="uname"
+        placeholder="Enter username"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pass"
+      >
+        Enter password
+      </label>
+      <input
+        className="form-control"
+        id="upass"
+        name="upass"
+        placeholder="Enter password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="cpass"
+      >
+        Enter confirm password
+      </label>
+      <input
+        className="form-control"
+        id="ucpass"
+        name="ucpass"
+        placeholder="Enter confirm password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <input
+      className="btn-success"
+      type="submit"
+      value="Submit"
+    />
+  </form>
+</div>
+`;

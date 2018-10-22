@@ -1,41 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders correctly 1`] = `
-<Uncontrolled(Navbar)
-  bsStyle="default"
->
-  <NavbarHeader>
-    <NavbarBrand>
-      <a
-        href="/admin"
-      >
-        PHOENIX
-      </a>
-    </NavbarBrand>
-  </NavbarHeader>
-  <Nav
-    bsClass="nav"
-    justified={false}
-    pullLeft={false}
-    pullRight={true}
-    stacked={false}
+<div>
+  <Uncontrolled(Navbar)
+    bsStyle="default"
   >
-    <NavItem
-      active={false}
-      disabled={false}
-      eventKey={1}
-      href="/category-list"
+    <NavbarHeader>
+      <NavbarBrand>
+        <a
+          href="/admin"
+        >
+          PHOENIX
+        </a>
+      </NavbarBrand>
+    </NavbarHeader>
+    <div
+      className="form-group pull-right"
     >
-      Categories
-    </NavItem>
-    <NavItem
-      active={false}
-      disabled={false}
-      eventKey={2}
-      href="/product-list"
+      <input
+        className="btn-success"
+        name="login"
+        onClick={[Function]}
+        type="button"
+        value="Login"
+      />
+      <input
+        className="btn-success"
+        name="register"
+        onClick={[Function]}
+        type="button"
+        value="Register"
+      />
+    </div>
+  </Uncontrolled(Navbar)>
+  <Modal
+    animation={true}
+    autoFocus={true}
+    backdrop={true}
+    bsClass="modal"
+    dialogComponentClass={[Function]}
+    enforceFocus={true}
+    keyboard={true}
+    manager={
+      ModalManager {
+        "add": [Function],
+        "containers": Array [],
+        "data": Array [],
+        "handleContainerOverflow": true,
+        "hideSiblingNodes": true,
+        "isTopModal": [Function],
+        "modals": Array [],
+        "remove": [Function],
+      }
+    }
+    onHide={[Function]}
+    renderBackdrop={[Function]}
+    restoreFocus={true}
+    show={false}
+  >
+    <ModalBody
+      bsClass="modal-body"
+      componentClass="div"
     >
-      Products
-    </NavItem>
-  </Nav>
-</Uncontrolled(Navbar)>
+      <Uncontrolled(Panel)>
+        <Login
+          showModal={false}
+          statusRegister={[Function]}
+        />
+      </Uncontrolled(Panel)>
+    </ModalBody>
+  </Modal>
+</div>
 `;

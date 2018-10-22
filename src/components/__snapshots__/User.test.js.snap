@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User renders correctly 1`] = `
+<div>
+  <Category
+    category={
+      Object {
+        "description": "Electronics descriptions goes here.",
+        "id": "11",
+        "name": "Electronics",
+      }
+    }
+    key="11"
+  />
+  <Category
+    category={
+      Object {
+        "description": "Clothes descriptions goes here.",
+        "id": "22",
+        "name": "Clothes",
+      }
+    }
+    key="22"
+  />
+</div>
+`;

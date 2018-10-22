@@ -21,6 +21,22 @@ exports[`Admin renders correctly 1`] = `
             Create Product
           </Link>
         </li>
+        <li>
+          <Link
+            replace={false}
+            to="/category-list"
+          >
+            Get category List
+          </Link>
+        </li>
+        <li>
+          <Link
+            replace={false}
+            to="/product-list"
+          >
+            Get product list
+          </Link>
+        </li>
       </ul>
     </nav>
   </div>

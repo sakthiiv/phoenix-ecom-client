@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main renders correctly 1`] = `
+<div
+  className="hidden"
+>
+  <p>
+    You must log in
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="cname"
+      >
+        Enter username
+      </label>
+      <input
+        className="form-control"
+        id="uname"
+        name="uname"
+        placeholder="Enter username"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="cname"
+      >
+        Enter password
+      </label>
+      <input
+        className="form-control"
+        id="password"
+        name="password"
+        placeholder="Enter password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <input
+      className="btn-success"
+      type="submit"
+      value="Submit"
+    />
+  </form>
+</div>
+`;

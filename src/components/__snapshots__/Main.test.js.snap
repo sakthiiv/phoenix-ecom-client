@@ -16,11 +16,6 @@ exports[`Main renders correctly 1`] = `
     <Route
       component={[Function]}
       exact={true}
-      path="/user"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
       path="/userproductList"
     />
     <Route
@@ -42,6 +37,11 @@ exports[`Main renders correctly 1`] = `
       component={[Function]}
       exact={true}
       path="/product-list"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/product-detail"
     />
   </Switch>
 </main>

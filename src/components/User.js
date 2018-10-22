@@ -33,17 +33,17 @@ class CategoryList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://10.132.21.159:8080/api/v1/category', {
-        method: "GET"
-    })
-    .then((response) => response.json())
-    .then((responseJson) => {
-         console.log(responseJson);
-         this.setState({categories:responseJson});
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+    // fetch('http://10.132.21.159:8080/api/v1/category', {
+    //     method: "GET"
+    // })
+    // .then((response) => response.json())
+    // .then((responseJson) => {
+    //      console.log(responseJson);
+    //      this.setState({categories:responseJson});
+    // })
+    // .catch((error) => {
+    //     console.log(error);
+    // });
   }
 
   render() {

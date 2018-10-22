@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import {
   Card,
   CardImg,
@@ -54,7 +55,10 @@ class UserProductList extends React.Component {
     //   });
     
   }
-
+  redirectToPList = () => {
+    alert('called');
+    return <Redirect to='/product-detail' />
+  }
   renderProducts(product, index) {
     // two albums at a time - the current and previous item
     let products = [this.state.products[index - 1], this.state.products[index]];
@@ -63,7 +67,7 @@ class UserProductList extends React.Component {
       <div className="columns" key={index}>
         {products.map((product, pIndex) => {
           return product ? (
-            <ProductItem key={product.id} productItem = {product}/>
+            <ProductItem key={product.id} productItem = {product} redirectToPList={this.redirectToPList}/>
           ) : (
             <div />
           );

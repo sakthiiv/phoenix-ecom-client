@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect, Link } from "react-router-dom";
 import {
   Card,
   CardText,
@@ -18,11 +19,12 @@ class ProductItem extends React.Component {
   }
   redirectToPList = (e) => {
     e.preventDefault();
+    this.props.redirectToPList();
   }
   render() {
     const {productItem} = this.props; 
     return (
-        <a href="" onClick={this.redirectToPList}>
+        <Link to={{ pathname: '/product-detail', state: { product: productItem} }}>
             <div className="list-container" key={productItem.id}>
                 <Row>
                     <h3>Peroduct Item</h3>
@@ -42,7 +44,7 @@ class ProductItem extends React.Component {
                     </Col>
                 </Row>
             </div>
-        </a>
+        </Link>
     );
   }
 }
