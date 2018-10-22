@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`userProductList renders correctly 1`] = `
+<div>
+  <div
+    className="list-container"
+    key="0"
+  >
+    <div />
+  </div>
+  <div
+    className="list-container"
+    key="1"
+  >
+    <Row
+      tag="div"
+    >
+      <div
+        className="columns"
+        key="1"
+      >
+        <ProductItem
+          key="1111"
+          productItem={
+            Object {
+              "category": "Electronics",
+              "description": "Tv Description goes here.",
+              "id": "1111",
+              "image": "",
+              "name": "TV",
+              "price": "18,000",
+            }
+          }
+        />
+        <ProductItem
+          key="2222"
+          productItem={
+            Object {
+              "category": "Electronics",
+              "description": "Mobile descriptions goes here.",
+              "id": "2222",
+              "image": "",
+              "name": "Mobile",
+              "price": "10,000",
+            }
+          }
+        />
+      </div>
+    </Row>
+  </div>
+  <div
+    className="list-container"
+    key="2"
+  >
+    <div />
+  </div>
+</div>
+`;
