@@ -21,6 +21,13 @@ class UserProductList extends React.Component {
     this.state = { products: null };
   }
 
+  componentDidMount() {
+    const { category } = this.props.location.state;
+    if (category.id) {
+      this.fetchProductList(category.id);
+    }
+  }
+
   renderProducts(product, index) {
     // two albums at a time - the current and previous item
     let products = [this.state.products[index - 1], this.state.products[index]];
@@ -29,7 +36,7 @@ class UserProductList extends React.Component {
       <div className="columns" key={index}>
         {products.map((product, pIndex) => {
           return product ? (
-            <ProductItem key={product.id} productItem = {product}/>
+            <ProductItem key={product.id} productItem={product} />
           ) : (
             <div />
           );
@@ -37,32 +44,28 @@ class UserProductList extends React.Component {
       </div>
     );
   }
-  
-  fetchProductList = (categoryId) => {
+
+  fetchProductList = categoryId => {
     product
-    .getAllByCatId(categoryId)
-    .then(responseJson => {
-      // this.setState({ products: responseJson });
-      console.log(responseJson);
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  }
+      .getAllByCatId(categoryId)
+      .then(responseJson => {
+        this.setState({ products: responseJson });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
   render() {
-    const {category} = this.props.location.state;
-    if(category.id) {
-      this.fetchProductList(category.id);
-    }
     return (
       <div>
-        {this.state.products.map((p, i) => {
-          return (
-            <div className="list-container" key={i}>
-              {i % 2 ? <Row>{this.renderProducts(p,i)}</Row> : <div />}
-            </div>
-          );
-        })}
+        {this.state.products &&
+          this.state.products.map((p, i) => {
+            return (
+              <div className="list-container" key={i}>
+                {i % 2 ? <Row>{this.renderProducts(p, i)}</Row> : <div />}
+              </div>
+            );
+          })}
       </div>
     );
   }
