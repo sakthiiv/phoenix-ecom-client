@@ -8,7 +8,9 @@ export default {
   update: (productId, product) => {
     return fetch.put(domainPath + "/" + productId, product);
   },
-  delete: productId => {},
+  delete: productId => {
+    return fetch.delete(domainPath + "/" + productId);
+  },
   getById: productId => {
     return fetch.get(domainPath + "/" + productId);
   },

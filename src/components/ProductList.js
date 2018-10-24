@@ -4,11 +4,18 @@ import { Card, CardText, CardBody, Row, Col } from "reactstrap";
 import { Modal, Panel } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import UpdateProduct from "./UpdateProduct";
+import DeleteItem from "./DeleteItem";
 
 class ProductList extends React.Component {
   constructor() {
     super();
-    this.state = { products: [], showModal: false, formOpen: "update" };
+    this.state = {
+      products: [],
+      showUpdateModal: false,
+      showDeleteModal: false,
+      formOpen: "update",
+      currentProduct: null
+    };
   }
 
   async componentDidMount() {
@@ -17,28 +24,46 @@ class ProductList extends React.Component {
   }
 
   close() {
-    this.setState({ showModal: false });
+    this.setState({ showUpdateModal: false, showDeleteModal: false });
   }
-  open = (e, type) => {
+  open = (e, type, product) => {
     // alert(e.target.name);
-    this.setState({ showModal: true, formOpen: type });
+    this.setState({ formOpen: type, currentProduct: product });
+    if (type === "update") {
+      this.setState({ showUpdateModal: true });
+    } else {
+      this.setState({ showDeleteModal: true });
+    }
+  };
+
+  onDeleteClick = () => {
+    product.delete(this.state.currentProduct.id).then(() => {
+      product.getAll().then(products => {
+        this.setState({ products });
+      });
+      this.setState({ showDeleteModal: false });
+    });
+  };
+
+  onDeleteCancelClick = () => {
+    this.setState({ showDeleteModal: false });
   };
 
   statusRegister = status => {
     if (status) {
-      this.setState({ showModal: false });
+      this.setState({ showUpdateModal: false, showDeleteModal: false });
       product.getAll().then(products => {
         this.setState({ products });
       });
     } else {
-      this.setState({ showModal: true });
+      this.setState({ showUpdateModal: true, showDeleteModal: true });
     }
   };
 
   renderProducts(index) {
     // two albums at a time - the current and previous item
     let products = [this.state.products[index - 1], this.state.products[index]];
-    const { formOpen } = this.state;
+    const { formOpen, currentProduct } = this.state;
 
     return (
       <div className="columns" key={index}>
@@ -57,14 +82,19 @@ class ProductList extends React.Component {
                         <div
                           className="fa-override"
                           onClick={e => {
-                            this.open(e, "update");
+                            this.open(e, "update", product);
                           }}
                         >
                           <FontAwesomeIcon className="fa-lg" icon="edit" />
                         </div>
                       </div>
                       <div className="cart-title-right">
-                        <div className="fa-override">
+                        <div
+                          className="fa-override"
+                          onClick={e => {
+                            this.open(e, "delete", product);
+                          }}
+                        >
                           <FontAwesomeIcon className="fa-lg" icon="times" />
                         </div>
                       </div>
@@ -75,25 +105,36 @@ class ProductList extends React.Component {
                   </CardBody>
                 </Card>
               </Col>
-              <Modal show={this.state.showModal} onHide={this.close.bind(this)}>
-                <Modal.Body>
-                  <Panel>
-                    {formOpen === "update" ? (
-                      <UpdateProduct
-                        product={product}
-                        statusRegister={this.statusRegister}
-                      />
-                    ) : (
-                      <div />
-                    )}
-                  </Panel>
-                </Modal.Body>
-              </Modal>
             </div>
           ) : (
             <div />
           );
         })}
+        <Modal show={this.state.showUpdateModal} onHide={this.close.bind(this)}>
+          <Modal.Body>
+            <Panel>
+              <UpdateProduct
+                product={currentProduct}
+                statusRegister={this.statusRegister}
+              />
+            </Panel>
+          </Modal.Body>
+        </Modal>
+        <Modal show={this.state.showDeleteModal} onHide={this.close.bind(this)}>
+          <Modal.Body>
+            <Panel>
+              <DeleteItem type={"Product"} />
+            </Panel>
+          </Modal.Body>
+          <Modal.Footer>
+            <input type="button" value="Confirm" onClick={this.onDeleteClick} />
+            <input
+              type="button"
+              value="Cancel"
+              onClick={this.onDeleteCancelClick}
+            />
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }

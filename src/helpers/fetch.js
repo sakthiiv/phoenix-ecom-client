@@ -21,5 +21,13 @@ export default {
         "Content-Type": "application/json"
       }
     }).then(res => res.json());
+  },
+  delete: route => {
+    return fetch(host + route, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(res => res.json());
   }
 };
