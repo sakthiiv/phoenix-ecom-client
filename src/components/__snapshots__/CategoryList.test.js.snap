@@ -1,3 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CategoryList renders correctly 1`] = `<div />`;
+exports[`CategoryList renders correctly 1`] = `
+<div>
+  <Modal
+    animation={true}
+    autoFocus={true}
+    backdrop={true}
+    bsClass="modal"
+    dialogComponentClass={[Function]}
+    enforceFocus={true}
+    keyboard={true}
+    manager={
+      ModalManager {
+        "add": [Function],
+        "containers": Array [],
+        "data": Array [],
+        "handleContainerOverflow": true,
+        "hideSiblingNodes": true,
+        "isTopModal": [Function],
+        "modals": Array [],
+        "remove": [Function],
+      }
+    }
+    onHide={[Function]}
+    renderBackdrop={[Function]}
+    restoreFocus={true}
+    show={false}
+  >
+    <ModalBody
+      bsClass="modal-body"
+      componentClass="div"
+    >
+      <Uncontrolled(Panel)>
+        <UpdateCategory
+          category={null}
+          statusRegister={[Function]}
+        />
+      </Uncontrolled(Panel)>
+    </ModalBody>
+  </Modal>
+  <Modal
+    animation={true}
+    autoFocus={true}
+    backdrop={true}
+    bsClass="modal"
+    dialogComponentClass={[Function]}
+    enforceFocus={true}
+    keyboard={true}
+    manager={
+      ModalManager {
+        "add": [Function],
+        "containers": Array [],
+        "data": Array [],
+        "handleContainerOverflow": true,
+        "hideSiblingNodes": true,
+        "isTopModal": [Function],
+        "modals": Array [],
+        "remove": [Function],
+      }
+    }
+    onHide={[Function]}
+    renderBackdrop={[Function]}
+    restoreFocus={true}
+    show={false}
+  >
+    <ModalBody
+      bsClass="modal-body"
+      componentClass="div"
+    >
+      <Uncontrolled(Panel)>
+        <DeleteItem
+          type="Category"
+        />
+      </Uncontrolled(Panel)>
+    </ModalBody>
+    <ModalFooter
+      bsClass="modal-footer"
+      componentClass="div"
+    >
+      <input
+        onClick={[Function]}
+        type="button"
+        value="Confirm"
+      />
+      <input
+        onClick={[Function]}
+        type="button"
+        value="Cancel"
+      />
+    </ModalFooter>
+  </Modal>
+</div>
+`;

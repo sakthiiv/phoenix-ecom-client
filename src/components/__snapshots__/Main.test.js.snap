@@ -1,48 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Main renders correctly 1`] = `
-<main>
-  <Switch>
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/admin"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/userproductList"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/create-category"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/create-product"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/category-list"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/product-list"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/product-detail"
-    />
-  </Switch>
-</main>
+<div
+  className="container"
+>
+  <main>
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/userproductList"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/create-category"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/create-product"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/category-list"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/product-list"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/product-detail"
+      />
+    </Switch>
+  </main>
+</div>
 `;

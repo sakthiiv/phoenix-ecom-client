@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import product from "../api/product";
+import category from "../api/category";
 
-class UpdateProduct extends React.Component {
+class UpdateCategory extends React.Component {
   state = {
-    productId: "",
+    categoryId: "",
     name: "",
     description: "",
-    price: "",
+    subCategory: null,
     image: null,
     imagePreviewUrl: null
   };
 
   componentDidMount() {
-    let { id, name, description, price } = this.props.product;
-    this.setState({ name, description, price, productId: id });
+    let { id, name, description, subCategory } = this.props.category;
+    this.setState({ name, description, categoryId: id, subCategory });
   }
 
   handleChange = e => {
@@ -36,15 +36,13 @@ class UpdateProduct extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    var productObj = {
+    var categoryObj = {
       name: this.state.name,
       description: this.state.description,
-      price: this.state.price,
-      base64ProductImage: this.state.imagePreviewUrl,
-      isValid: "true"
+      subCategory: this.state.subCategory
     };
-    product
-      .update(this.state.productId, productObj)
+    category
+      .update(this.state.categoryId, categoryObj)
       .then(responseJson => {
         this.props.statusRegister(true);
       })
@@ -54,7 +52,7 @@ class UpdateProduct extends React.Component {
   };
 
   render() {
-    let { name, description, price, imagePreviewUrl } = this.props.product;
+    let { name, description, imagePreviewUrl } = this.props.category;
     let $imagePreview = null;
     if (imagePreviewUrl) {
       $imagePreview = <img src={imagePreviewUrl} className={"img-preview"} />;
@@ -66,15 +64,15 @@ class UpdateProduct extends React.Component {
 
     return (
       <div>
-        <h1>Update product</h1>
+        <h1>Update category</h1>
         <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
           <div className="form-group">
-            <label htmlFor="name">Edit name of the product</label>
+            <label htmlFor="name">Edit name of the Category</label>
             <input
               id="name"
               type="text"
               name="name"
-              placeholder="Enter name of the product"
+              placeholder="Enter name of the category"
               className="form-control"
               defaultValue={name}
               required
@@ -82,7 +80,9 @@ class UpdateProduct extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="description">Edit description of the product</label>
+            <label htmlFor="description">
+              Edit description of the Category
+            </label>
             <textarea
               className="form-control"
               id="description"
@@ -92,28 +92,10 @@ class UpdateProduct extends React.Component {
               required
             />
           </div>
-
-          <div className="form-group">
-            <label htmlFor="price">Edit price of the product</label>
-            <input
-              id="price"
-              name="price"
-              type="text"
-              placeholder="Enter price of the product"
-              className="form-control"
-              defaultValue={price}
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <input type="file" name="file" className="file" />
-            <div className="img-preview">{$imagePreview}</div>
-          </div>
           <input type="submit" value="Submit" />
         </form>
       </div>
     );
   }
 }
-export default UpdateProduct;
+export default UpdateCategory;

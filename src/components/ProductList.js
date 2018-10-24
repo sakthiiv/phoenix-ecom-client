@@ -112,19 +112,15 @@ class ProductList extends React.Component {
         })}
         <Modal show={this.state.showUpdateModal} onHide={this.close.bind(this)}>
           <Modal.Body>
-            <Panel>
-              <UpdateProduct
-                product={currentProduct}
-                statusRegister={this.statusRegister}
-              />
-            </Panel>
+            <UpdateProduct
+              product={currentProduct}
+              statusRegister={this.statusRegister}
+            />
           </Modal.Body>
         </Modal>
         <Modal show={this.state.showDeleteModal} onHide={this.close.bind(this)}>
           <Modal.Body>
-            <Panel>
-              <DeleteItem type={"Product"} />
-            </Panel>
+            <DeleteItem type={"Product"} />
           </Modal.Body>
           <Modal.Footer>
             <input type="button" value="Confirm" onClick={this.onDeleteClick} />
@@ -145,7 +141,11 @@ class ProductList extends React.Component {
         {this.state.products.map((p, i) => {
           return (
             <div className="list-container" key={i}>
-              {i % 2 ? <Row>{this.renderProducts(i)}</Row> : <div />}
+              {i % 2 || i === this.state.products.length - 1 ? (
+                <Row>{this.renderProducts(i)}</Row>
+              ) : (
+                <div />
+              )}
             </div>
           );
         })}
