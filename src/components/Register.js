@@ -10,11 +10,6 @@ class Login extends React.Component {
     ucpass: null
   };
 
-  // login = () => {
-  //   fakeAuth.authenticate(() => {
-  //     this.setState({ redirectToReferrer: true });
-  //   });
-  // };
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };

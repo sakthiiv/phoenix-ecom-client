@@ -25,21 +25,24 @@ class ProductItem extends React.Component {
     const {productItem} = this.props; 
     return (
         <Link to={{ pathname: '/product-detail', state: { product: productItem} }}>
-            <div className="list-container" key={productItem.id}>
+            <div className="list-container prod-list" key={productItem.id}>
                 <Row>
-                    <h3>Peroduct Item</h3>
                     <Col sm="12">
                         <Card>
-                            <CardBody>
-                                <div className="cart-title-container">
-                                    <div className="cart-title-left">
-                                        <h3>{productItem.name}</h3>
+                            <picture class="img-product">
+                                <img src={"http://10.132.20.169:8080/api/v1/image/" + productItem.id + ".jpg"}/>
+                            </picture>
+                            <div class="prod-body-container">
+                                <CardBody>
+                                    <div className="cart-title-container">
+                                        <div className="cart-title-left">
+                                            <h3>{productItem.name}</h3>
+                                            <p>{productItem.description}</p>
+                                            <p>{productItem.price}$</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </CardBody>
-                            <CardBody className="card-body">
-                                <CardText>{productItem.description}</CardText>
-                            </CardBody>
+                                </CardBody>
+                            </div>
                         </Card>
                     </Col>
                 </Row>

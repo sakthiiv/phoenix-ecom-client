@@ -24,7 +24,7 @@ class Category extends React.Component {
     const {category} = this.props; 
     return (
         <Link to={{ pathname: '/userproductList', state: { category: category} }}>
-            <div className="list-container" key={category.id}>
+            <div className="list-container cat-list" key={category.id}>
                 <Row>
                     <Col sm="12">
                         <Card>

@@ -59,10 +59,11 @@ class UserProductList extends React.Component {
   render() {
     const {products} = this.state;
     let prodList = products.map((product, i) => (
-      <ProductItem key={product.id} productItem={product} />
+      <div className="col-sm-4"><ProductItem key={product.id} productItem={product} /></div>
     ));
     return (
       <div>
+        {products.length === 0 ? <h1>Something went wrong!</h1>:''}
         {prodList}
       </div>
     );

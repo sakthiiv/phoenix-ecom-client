@@ -7,6 +7,9 @@ body {
   color: #000000;
 }
 
+a {
+  color:#000;
+}
 .list-container {
     width: 80%;
     margin: 0 auto;
@@ -33,4 +36,14 @@ body {
 .fa-override {
   padding: 0 5px;
   cursor: pointer;
+}
+
+.log_register_container {
+  margin-top: 15px;
+  width: 200px;
+  input {
+    width: 45%;
+    display: inline-block;
+    margin-right: 10px;
+  }
 }
