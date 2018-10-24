@@ -10,18 +10,20 @@ import UserProductList from "./userProductList";
 import ProductDetail from "./ProductDetail";
 
 const Main = () => (
-  <main>
-    <Switch>
-      <Route exact={true} path="/" component={User} />
-      <Route exact={true} path="/admin" component={Admin} />
-      <Route exact={true} path="/userproductList" component={UserProductList} />
-      <Route exact={true} path="/create-category" component={CreateCategory} />
-      <Route exact={true} path="/create-product" component={CreateProduct} />
-      <Route exact={true} path="/category-list" component={CategoryList} />
-      <Route exact={true} path="/product-list" component={ProductList} />
-      <Route exact={true} path="/product-detail" component={ProductDetail} />
-    </Switch>
-  </main>
+  <div className="container">
+    <main>
+      <Switch>
+        <Route exact={true} path="/" component={User} />
+        <Route exact={true} path="/admin" component={Admin} />
+        <Route exact={true} path="/userproductList" component={UserProductList} />
+        <Route exact={true} path="/create-category" component={CreateCategory} />
+        <Route exact={true} path="/create-product" component={CreateProduct} />
+        <Route exact={true} path="/category-list" component={CategoryList} />
+        <Route exact={true} path="/product-list" component={ProductList} />
+        <Route exact={true} path="/product-detail" component={ProductDetail} />
+      </Switch>
+    </main>
+  </div>
 );
 
 export default Main;

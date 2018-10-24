@@ -18,7 +18,7 @@ import product from "../api/product";
 class UserProductList extends React.Component {
   constructor() {
     super();
-    this.state = { products: null };
+    this.state = { products: [] };
   }
 
   componentDidMount() {
@@ -28,9 +28,9 @@ class UserProductList extends React.Component {
     }
   }
 
-  renderProducts(product, index) {
+  renderProducts() {
     // two albums at a time - the current and previous item
-    let products = [this.state.products[index - 1], this.state.products[index]];
+    // let products = [this.state.products[index - 1], this.state.products[index]];
 
     return (
       <div className="columns" key={index}>
@@ -54,21 +54,18 @@ class UserProductList extends React.Component {
       .catch(error => {
         console.log(error);
       });
-  };
+  }
+  
   render() {
+    const {products} = this.state;
+    let prodList = products.map((product, i) => (
+      <ProductItem key={product.id} productItem={product} />
+    ));
     return (
       <div>
-        {this.state.products &&
-          this.state.products.map((p, i) => {
-            return (
-              <div className="list-container" key={i}>
-                {i % 2 ? <Row>{this.renderProducts(p, i)}</Row> : <div />}
-              </div>
-            );
-          })}
+        {prodList}
       </div>
     );
   }
 }
-
 export default UserProductList;

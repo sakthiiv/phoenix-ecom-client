@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import product from "../api/product";
+import categoryApi from "../api/category";
+import { Link } from 'react-router-dom';
 
 class CreateProduct extends React.Component {
   state = {
@@ -10,11 +12,15 @@ class CreateProduct extends React.Component {
     imagePreviewUrl: null,
     categoriesecom: 1,
     subcategoriesecom: 2,
-    categories: ["Electronics", "Clothes"],
-    subcategories: []
+    categories: [],
+    subcategories: [],
+    registerStatus:false
   };
 
-  componentDidMount() {}
+  async componentDidMount() {
+    const categories = await categoryApi.getAll();
+    this.setState({ categories });
+  }
 
   handleChange = e => {
     if (["file"].includes(e.target.className)) {
@@ -28,6 +34,10 @@ class CreateProduct extends React.Component {
         });
       };
       reader.readAsDataURL(file);
+    } else if(["categoriesecom"].includes(e.target.name)){
+      const filteredCategory = this.state.categories.find((category) => category.id == e.target.value);
+      const newSubcategories =   filteredCategory ? filteredCategory.subCategory : [];
+      this.setState({ [e.target.name]: e.target.value, subcategories: newSubcategories});
     } else {
       this.setState({ [e.target.name]: e.target.value });
     }
@@ -44,7 +54,7 @@ class CreateProduct extends React.Component {
       name: this.state.pname,
       description: this.state.pdescription,
       price: this.state.price,
-      base64ProductImage: this.state.imagePreviewUrl,
+      imageContent: this.state.imagePreviewUrl,
       categoryId: this.state.categoriesecom,
       subCategoryId: this.state.subcategoriesecom,
       isValid: "true"
@@ -53,6 +63,7 @@ class CreateProduct extends React.Component {
       .create(productObj)
       .then(responseJson => {
         console.log(responseJson);
+        this.setState({registerStatus:true});
       })
       .catch(error => {
         console.log(error);
@@ -66,7 +77,8 @@ class CreateProduct extends React.Component {
       price,
       imagePreviewUrl,
       categories,
-      subcategories
+      subcategories,
+      registerStatus
     } = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
@@ -76,87 +88,97 @@ class CreateProduct extends React.Component {
         <div className="previewText">Please select an image.</div>
       );
     }
-
+    // console.log(this.state);
     let categoriesItems = categories.map(category => (
-      <option key={category}>{category}</option>
+      <option key={category.id} value={category.id}>{category.name}</option>
     ));
-    let subCategoriesItems = subcategories.map(subcategory => (
-      <option key={subcategory}>{subcategory}</option>
+    let subCategoriesItems = subcategories.map((subcategory, i) => (
+      <option key={i} value={subcategory.name}>{subcategory.name}</option>
     ));
     return (
-      <div className="col-md-6">
-        <h1>Create product</h1>
-        <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
-          <div className="form-group">
-            <label htmlFor="pname">Enter name of the product</label>
-            <input
-              id="pname"
-              type="text"
-              name="pname"
-              placeholder="Enter name of the product"
-              className="form-control"
-              defaultValue={pname}
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="pdescription">
-              Example description of the product
-            </label>
-            <textarea
-              className="form-control"
-              id="pdescription"
-              name="pdescription"
-              rows="3"
-              defaultValue={pdescription}
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="price">Enter price of the product</label>
-            <input
-              id="price"
-              name="price"
-              type="text"
-              placeholder="Enter price of the product"
-              className="form-control"
-              defaultValue={price}
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="categoriesecom">Select category</label>
-            <select
-              className="form-control"
-              id="categoriesecom"
-              name="categoriesecom"
-            >
-              {categoriesItems}
-            </select>
-          </div>
-          {subcategories.length !== 0 && (
+      <div>
+      {registerStatus ? 
+            <div>
+              <h1>Product created</h1>
+              <Link to='/admin'>Go to homepage</Link>
+            </div> :
+          <div className="col-md-6">
+          <h1>Create product</h1>
+          <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
             <div className="form-group">
-              <label htmlFor="subcategoriesecom">Select subcategory</label>
+              <label htmlFor="pname">Enter name of the product</label>
+              <input
+                id="pname"
+                type="text"
+                name="pname"
+                placeholder="Enter name of the product"
+                className="form-control"
+                defaultValue={pname}
+                required
+              />
+            </div>
+  
+            <div className="form-group">
+              <label htmlFor="pdescription">
+                Example description of the product
+              </label>
+              <textarea
+                className="form-control"
+                id="pdescription"
+                name="pdescription"
+                rows="3"
+                defaultValue={pdescription}
+                required
+              />
+            </div>
+  
+            <div className="form-group">
+              <label htmlFor="price">Enter price of the product</label>
+              <input
+                id="price"
+                name="price"
+                type="text"
+                placeholder="Enter price of the product"
+                className="form-control"
+                defaultValue={price}
+                required
+              />
+            </div>
+  
+            <div className="form-group">
+              <label htmlFor="categoriesecom">Select category</label>
               <select
                 className="form-control"
-                id="subcategoriesecom"
-                name="subcategoriesecom"
+                id="categoriesecom"
+                name="categoriesecom"
               >
-                {subCategoriesItems}
+                <option value="0">Select category</option>
+                {categoriesItems}
               </select>
             </div>
-          )}
-
-          <div className="form-group">
-            <input type="file" name="file" className="file" />
-            <div className="img-preview">{$imagePreview}</div>
-          </div>
-          <input type="submit" value="Submit" />
-        </form>
+            {subcategories.length !== 0 && (
+              <div className="form-group">
+                <label htmlFor="subcategoriesecom">Select subcategory</label>
+                <select
+                  className="form-control"
+                  id="subcategoriesecom"
+                  name="subcategoriesecom"
+                >
+                  <option value="0">Select Sub category</option>
+                  {subCategoriesItems}
+                </select>
+              </div>
+            )}
+  
+            <div className="form-group">
+              <input type="file" name="file" className="file" />
+              <div className="img-preview">{$imagePreview}</div>
+            </div>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>}
       </div>
+      
     );
   }
 }

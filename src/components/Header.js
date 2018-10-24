@@ -20,7 +20,6 @@ class Header extends React.Component {
     this.setState({ showModal: false });
   }
   open = (e) => {
-    // alert(e.target.name);
     this.setState({ showModal: true, formOpen:  e.target.name});
   }
   statusLogin = (status) => {
