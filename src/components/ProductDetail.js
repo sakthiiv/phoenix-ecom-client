@@ -14,7 +14,7 @@ class ProductDetail extends React.Component {
   
   render() {
     // console.log(p)
-    const {match, data} = this.props;
+    // const {match, data} = this.props;
     const { product } = this.props.location.state
     return (
         <div className="clearfix">

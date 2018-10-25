@@ -8,29 +8,22 @@ exports[`Header renders correctly 1`] = `
     <NavbarHeader>
       <NavbarBrand>
         <a
-          href="/admin"
+          href="/"
         >
           PHOENIX
         </a>
       </NavbarBrand>
     </NavbarHeader>
     <div
-      className="form-group pull-right"
+      className="pull-right"
+      style={
+        Object {
+          "color": "white",
+          "marginTop": "20px",
+        }
+      }
     >
-      <input
-        className="btn-success"
-        name="login"
-        onClick={[Function]}
-        type="button"
-        value="Login"
-      />
-      <input
-        className="btn-success"
-        name="register"
-        onClick={[Function]}
-        type="button"
-        value="Register"
-      />
+      Welcome : 
     </div>
   </Uncontrolled(Navbar)>
   <Modal

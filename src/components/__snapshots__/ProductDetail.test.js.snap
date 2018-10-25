@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDetail renders correctly 1`] = `
+<div
+  className="clearfix"
+>
+  <div
+    className="col-sm-6"
+  >
+    <picture>
+      <img
+        src="http://10.132.20.169:8080/api/v1/image/5bc9d01964151f13906681b7.jpg"
+      />
+    </picture>
+  </div>
+  <div
+    className="col-sm-6"
+  >
+    <h1>
+      Sony bravia
+    </h1>
+    <p>
+      asdasd
+    </p>
+    <h2>
+      20000
+      $
+    </h2>
+    <div
+      className="form-group"
+    >
+      <input
+        className="btn-success"
+        type="button"
+        value="Add to cart"
+      />
+    </div>
+  </div>
+</div>
+`;

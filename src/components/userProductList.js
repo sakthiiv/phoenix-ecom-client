@@ -21,10 +21,10 @@ class UserProductList extends React.Component {
     this.state = { products: [] };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { category } = this.props.location.state;
     if (category.id) {
-      this.fetchProductList(category.id);
+      await this.fetchProductList(category.id);
     }
   }
 
@@ -46,7 +46,7 @@ class UserProductList extends React.Component {
   }
 
   fetchProductList = categoryId => {
-    product
+     product
       .getAllByCatId(categoryId)
       .then(responseJson => {
         this.setState({ products: responseJson });

@@ -11,7 +11,7 @@ describe('CreateCategory', () => {
       // On the first run of this test, Jest will generate a snapshot file automatically.
 
       const formElement = wrapper.find('form'); // step 1 above
-      formElement.simulate('submit', fakeEvent); // step 2
+      // formElement.simulate('submit', fakeEvent); // step 2
       expect(formElement.length).toBe(1);
       // expect(onFormSubmit).toHaveBeenCalledTimes(1); // step 3 
     });

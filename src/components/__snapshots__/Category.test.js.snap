@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categoty renders correctly 1`] = `
+<Link
+  replace={false}
+  to={
+    Object {
+      "pathname": "/userproductList",
+      "state": Object {
+        "category": Object {
+          "description": "Hi Test",
+          "id": "5bc9a87d76e3833f73511a17",
+          "name": "Electronics Test",
+          "subCategory": Array [
+            Object {
+              "description": "Hi Sub",
+              "id": "5bd0526764151f2c94f622aa",
+              "name": "nameSub",
+              "subCategory": null,
+              "valid": null,
+            },
+          ],
+          "valid": true,
+        },
+      },
+    }
+  }
+>
+  <div
+    className="list-container cat-list"
+    key="5bc9a87d76e3833f73511a17"
+  >
+    <Row
+      tag="div"
+    >
+      <Col
+        sm="12"
+        tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        <Card
+          tag="div"
+        >
+          <CardBody
+            tag="div"
+          >
+            <div
+              className="cart-title-container"
+            >
+              <div
+                className="cart-title-left"
+              >
+                <h3>
+                  Electronics Test
+                </h3>
+              </div>
+            </div>
+          </CardBody>
+          <CardBody
+            className="card-body"
+            tag="div"
+          >
+            <CardText
+              tag="p"
+            >
+              Hi Test
+            </CardText>
+          </CardBody>
+        </Card>
+      </Col>
+    </Row>
+  </div>
+</Link>
+`;

@@ -8,6 +8,7 @@ exports[`Main renders correctly 1`] = `
     You must log in
   </p>
   <form
+    onChange={[Function]}
     onSubmit={[Function]}
   >
     <div
@@ -38,7 +39,7 @@ exports[`Main renders correctly 1`] = `
       <input
         className="form-control"
         id="password"
-        name="password"
+        name="upass"
         placeholder="Enter password"
         required={true}
         type="password"

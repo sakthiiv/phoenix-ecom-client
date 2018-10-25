@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductItem renders correctly 1`] = `
+<Link
+  replace={false}
+  to={
+    Object {
+      "pathname": "/product-detail",
+      "state": Object {
+        "product": Object {
+          "categoryId": "5bc9a87d76e3833f73511a17",
+          "description": "asdasd",
+          "id": "5bc9d01964151f13906681b7",
+          "name": "Sony bravia",
+          "price": 20000,
+          "subCategoryId": "2",
+        },
+      },
+    }
+  }
+>
+  <div
+    className="list-container prod-list"
+    key="5bc9d01964151f13906681b7"
+  >
+    <Row
+      tag="div"
+    >
+      <Col
+        sm="12"
+        tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        <Card
+          tag="div"
+        >
+          <picture
+            class="img-product"
+          >
+            <img
+              src="http://10.132.20.169:8080/api/v1/image/5bc9d01964151f13906681b7.jpg"
+            />
+          </picture>
+          <div
+            class="prod-body-container"
+          >
+            <CardBody
+              tag="div"
+            >
+              <div
+                className="cart-title-container"
+              >
+                <div
+                  className="cart-title-left"
+                >
+                  <h3>
+                    Sony bravia
+                  </h3>
+                  <p>
+                    asdasd
+                  </p>
+                  <p>
+                    20000
+                    $
+                  </p>
+                </div>
+              </div>
+            </CardBody>
+          </div>
+        </Card>
+      </Col>
+    </Row>
+  </div>
+</Link>
+`;
