@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "webpack -d && webpack-dev-server --inline --hot",
+    "start": "webpack -d && webpack-dev-server --port 3000 --hot --host 0.0.0.0",
     "dev": "webpack --config webpack.config.js"
   },
   "devDependencies": {

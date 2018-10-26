@@ -51,7 +51,7 @@ module.exports = {
     // https: true,
     open: true,
     compress: true,
-    port: 9003,
+    // port: 9003,
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, "public") // the webpack-dev-server serves the files in the directory provided with contentBase
   },
