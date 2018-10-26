@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import categoryApi from "../api/category";
 import Category from "./Category";
 import sessionstorage from '../helpers/sessionstorage';
@@ -13,7 +14,7 @@ class CategoryList extends React.Component {
   }
 
   async componentDidMount() {
-    if(sessionstorage.getItemFromSession('user') && sessionstorage.getItemFromSession('user').role === 'Admin') {
+    if(sessionstorage.getItemFromSession('user') && sessionstorage.getItemFromSession('user').role === 'admin') {
       this.setState({redirectToReferrer:true});
     } else {
       this.setState({redirectToReferrer:false});
@@ -35,9 +36,11 @@ class CategoryList extends React.Component {
     return (
       <div>
         {this.state.categories.length === 0 ? <h1>Something went wrong</h1> : ''}
-        {this.state.categories.map((category, i) => {
-          return <div className="col-sm-3" key={category.id}><Category  category={category} /></div>;
-        })}
+        <div className="plist_container">
+          {this.state.categories.map((category, i) => {
+            return <div className="col-sm-3" key={category.id}><Category  category={category} /></div>;
+          })}
+        </div>
       </div>
     );
   }

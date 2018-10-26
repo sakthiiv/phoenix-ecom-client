@@ -31,7 +31,7 @@ class Login extends React.Component {
             } else {
               this.setState({ redirectToReferrer: '/' });
             }
-            
+            window.location.reload();
         })
         .catch(error => {
           console.log(error);

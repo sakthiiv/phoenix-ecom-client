@@ -14,6 +14,8 @@ export default {
     }).then(res => res.json());
   },
   post: (route, data) => {
+    console.log('body request');
+    console.log(JSON.stringify(data));
     return fetch(host + route, {
       method: "POST",
       body: JSON.stringify(data),

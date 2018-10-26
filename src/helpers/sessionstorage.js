@@ -9,5 +9,11 @@ export default {
         return JSON.parse(sessionStorage.getItem(key));
     }
     return null;
+  },
+  removeItemSession:(key) => {
+    if(sessionStorage.getItem(key)) {
+      sessionStorage.removeItem(key);
+    }
+    return null;
   }
 };

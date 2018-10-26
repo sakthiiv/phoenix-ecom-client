@@ -64,7 +64,9 @@ class UserProductList extends React.Component {
     return (
       <div>
         {products.length === 0 ? <h1>Something went wrong!</h1>:''}
-        {prodList}
+        <div className="plist_container">
+          {prodList}
+        </div>
       </div>
     );
   }

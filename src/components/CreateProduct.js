@@ -172,7 +172,7 @@ class CreateProduct extends React.Component {
   
             <div className="form-group">
               <input type="file" name="file" className="file" />
-              <div className="img-preview">{$imagePreview}</div>
+              <div className="img-preview" style={{width:"300px"}}>{$imagePreview}</div>
             </div>
             <input type="submit" value="Submit" />
           </form>

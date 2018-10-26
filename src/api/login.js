@@ -1,5 +1,5 @@
 import fetch from "../helpers/fetch";
-const domainPath = "/login";
+const domainPath = "login";
 
 export default {
   login: user => {

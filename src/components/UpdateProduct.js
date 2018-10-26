@@ -40,9 +40,10 @@ class UpdateProduct extends React.Component {
       name: this.state.name,
       description: this.state.description,
       price: this.state.price,
-      base64ProductImage: this.state.imagePreviewUrl,
+      imageContent: this.state.imagePreviewUrl,
       isValid: "true"
     };
+    console.log(JSON.stringify(productObj));
     product
       .update(this.state.productId, productObj)
       .then(responseJson => {
