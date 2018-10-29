@@ -95,6 +95,11 @@ exports[`CreateProduct renders correctly 1`] = `
         />
         <div
           className="img-preview"
+          style={
+            Object {
+              "width": "300px",
+            }
+          }
         >
           <div
             className="previewText"

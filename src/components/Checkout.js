@@ -53,7 +53,7 @@ class Checkout extends React.Component {
     let { orderConfirmation , products} = this.state;
     // let {products} = this.props.location.state;
     let prodList = products.map((product, i) => (
-        <li>
+        <li key={i}>
             <picture>
                 <img style={{width:'100%'}}src={"http://10.134.20.223:8080/api/v1/image/" + product.id + ".jpg"}/>
             </picture>

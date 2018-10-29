@@ -4,13 +4,15 @@ exports[`Admin renders correctly 1`] = `
 <div>
   <div>
     <nav>
-      <ul>
+      <ul
+        className="admin_home"
+      >
         <li>
           <Link
             replace={false}
             to="/create-category"
           >
-            Create Category
+            Add Category
           </Link>
         </li>
         <li>
@@ -18,7 +20,7 @@ exports[`Admin renders correctly 1`] = `
             replace={false}
             to="/create-product"
           >
-            Create Product
+            Add Product
           </Link>
         </li>
         <li>
@@ -26,7 +28,7 @@ exports[`Admin renders correctly 1`] = `
             replace={false}
             to="/category-list"
           >
-            Get category List
+            View category List
           </Link>
         </li>
         <li>
@@ -34,7 +36,7 @@ exports[`Admin renders correctly 1`] = `
             replace={false}
             to="/product-list"
           >
-            Get product list
+            View product list
           </Link>
         </li>
       </ul>

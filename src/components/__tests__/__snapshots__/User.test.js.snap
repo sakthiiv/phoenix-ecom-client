@@ -5,5 +5,8 @@ exports[`User renders correctly 1`] = `
   <h1>
     Something went wrong
   </h1>
+  <div
+    className="plist_container"
+  />
 </div>
 `;

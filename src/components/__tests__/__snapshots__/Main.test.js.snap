@@ -46,6 +46,24 @@ exports[`Main renders correctly 1`] = `
         exact={true}
         path="/product-detail"
       />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/shopping-cart"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/search"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/checkout"
+      />
+      <Route
+        component={[Function]}
+      />
     </Switch>
   </main>
 </div>

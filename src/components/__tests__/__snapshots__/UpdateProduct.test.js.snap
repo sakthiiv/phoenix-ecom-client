@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User renders correctly 1`] = `
+<div>
+  <h1>
+    Update product
+  </h1>
+  <form
+    onChange={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="name"
+      >
+        Edit name of the product
+      </label>
+      <input
+        className="form-control"
+        defaultValue="Sony bravia"
+        id="name"
+        name="name"
+        placeholder="Enter name of the product"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="description"
+      >
+        Edit description of the product
+      </label>
+      <textarea
+        className="form-control"
+        defaultValue="asdasd"
+        id="description"
+        name="description"
+        required={true}
+        rows="3"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="price"
+      >
+        Edit price of the product
+      </label>
+      <input
+        className="form-control"
+        defaultValue={20000}
+        id="price"
+        name="price"
+        placeholder="Enter price of the product"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="file"
+        name="file"
+        type="file"
+      />
+      <div
+        className="img-preview"
+      >
+        <div
+          className="previewText"
+        >
+          Please select an image.
+        </div>
+      </div>
+    </div>
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
+</div>
+`;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin renders correctly 1`] = `
+<div
+  className="col-sm-12"
+>
+  <h4>
+    <h4>
+      No products available. Add atleast
+    </h4>
+  </h4>
+</div>
+`;

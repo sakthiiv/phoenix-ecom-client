@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User renders correctly 1`] = `
+<div>
+  <h1
+    style={
+      Object {
+        "marginLeft": "20px",
+      }
+    }
+  >
+    Search the product
+  </h1>
+  <form
+    className="col-sm-6"
+    onChange={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        className="form-control"
+        id="search"
+        name="search"
+        placeholder="Enter name of the product"
+        required={true}
+        type="text"
+      />
+    </div>
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
+  <div
+    className="col-md-12 plist_container"
+    style={
+      Object {
+        "marginTop": "40px",
+      }
+    }
+  />
+</div>
+`;

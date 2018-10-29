@@ -9,7 +9,12 @@ exports[`ProductDetail renders correctly 1`] = `
   >
     <picture>
       <img
-        src="http://10.132.20.169:8080/api/v1/image/5bc9d01964151f13906681b7.jpg"
+        src="http://10.134.20.223:8080/api/v1/image/5bc9d01964151f13906681b7.jpg"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
       />
     </picture>
   </div>
@@ -23,18 +28,20 @@ exports[`ProductDetail renders correctly 1`] = `
       asdasd
     </p>
     <h2>
-      20000
       $
+      20000
     </h2>
     <div
       className="form-group"
     >
       <input
-        className="btn-success"
+        className="btn btn-success"
+        onClick={[Function]}
         type="button"
         value="Add to cart"
       />
     </div>
+    <p />
   </div>
 </div>
 `;

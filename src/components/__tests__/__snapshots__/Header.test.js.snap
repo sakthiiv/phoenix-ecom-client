@@ -10,20 +10,53 @@ exports[`Header renders correctly 1`] = `
         <a
           href="/"
         >
-          PHOENIX
+          PHOENIX 
+          <span
+            className="half_price"
+          >
+            Half product half price
+          </span>
         </a>
       </NavbarBrand>
     </NavbarHeader>
-    <div
+    <Link
       className="pull-right"
+      replace={false}
       style={
         Object {
           "color": "white",
+          "marginRight": "20px",
           "marginTop": "20px",
         }
       }
+      to="/search"
     >
-      Welcome : 
+      <span
+        className="glyphicon glyphicon-search"
+        style={
+          Object {
+            "fontSize": "25px",
+          }
+        }
+      />
+    </Link>
+    <div
+      className="form-group pull-right log_register_container"
+    >
+      <input
+        className="btn-success form-control"
+        name="login"
+        onClick={[Function]}
+        type="button"
+        value="Login"
+      />
+      <input
+        className="btn-success form-control"
+        name="register"
+        onClick={[Function]}
+        type="button"
+        value="Register"
+      />
     </div>
   </Uncontrolled(Navbar)>
   <Modal
@@ -55,12 +88,7 @@ exports[`Header renders correctly 1`] = `
       bsClass="modal-body"
       componentClass="div"
     >
-      <Uncontrolled(Panel)>
-        <Login
-          showModal={false}
-          statusRegister={[Function]}
-        />
-      </Uncontrolled(Panel)>
+      <Uncontrolled(Panel) />
     </ModalBody>
   </Modal>
 </div>

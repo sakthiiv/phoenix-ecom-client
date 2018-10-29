@@ -3,8 +3,8 @@ import { shallow } from "enzyme";
 import CategoryList from "../CategoryList";
 import category from "../../__mocks__/category";
 
-jest.mock("../api/category", () => {
-  const categoryMock = require("../__mocks__/category");
+jest.mock("../../api/category", () => {
+  const categoryMock = require("../../__mocks__/category");
   return categoryMock;
 });
 

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin renders correctly 1`] = `
+<div>
+  Are you sure you want to delete this 
+  ?
+</div>
+`;
