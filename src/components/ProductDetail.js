@@ -54,7 +54,7 @@ class ProductDetail extends React.Component {
         <div className="clearfix">
             <div className="col-sm-6">  
               <picture>
-                <img style={{width:'100%'}}src={"http://10.132.20.169:8080/api/v1/image/" + product.id + ".jpg"}/>
+                <img style={{width:'100%'}}src={"http://10.134.20.223:8080/api/v1/image/" + product.id + ".jpg"}/>
               </picture>
             </div>
             

@@ -1,4 +1,4 @@
-export const host = "http://10.132.20.169:8080/api/v1/";
+export const host = "http://10.134.20.223:8080/api/v1/";
 
 export default {
   get: route => {

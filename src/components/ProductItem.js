@@ -55,7 +55,7 @@ class ProductItem extends React.Component {
                     <Col sm="12">
                         <Card>
                             <picture className="img-product">
-                                <img src={"http://10.132.20.169:8080/api/v1/image/" + productItem.id + ".jpg"}/>
+                                <img src={"http://10.134.20.223:8080/api/v1/image/" + productItem.id + ".jpg"}/>
                             </picture>
                             <div className="prod-body-container">
                                 <CardBody>

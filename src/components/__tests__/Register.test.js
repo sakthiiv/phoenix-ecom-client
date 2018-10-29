@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Register from './Register';
+import Register from '../Register';
 describe('Main', () => {
     it('renders correctly', () => {
       const wrapper = shallow(<Register />);

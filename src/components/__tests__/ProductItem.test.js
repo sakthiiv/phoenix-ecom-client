@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import ProductItem from "./ProductItem";
+import ProductItem from "../ProductItem";
 
 const product = {
   "categoryId": "5bc9a87d76e3833f73511a17",

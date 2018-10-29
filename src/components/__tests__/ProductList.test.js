@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
-import ProductList from "./ProductList";
-import product from "../__mocks__/product";
+import ProductList from "../ProductList";
+import product from "../../__mocks__/product";
 
 jest.mock("../api/product", () => {
   const productMock = require("../__mocks__/product");

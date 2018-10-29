@@ -55,7 +55,7 @@ class Checkout extends React.Component {
     let prodList = products.map((product, i) => (
         <li>
             <picture>
-                <img style={{width:'100%'}}src={"http://10.132.20.169:8080/api/v1/image/" + product.id + ".jpg"}/>
+                <img style={{width:'100%'}}src={"http://10.134.20.223:8080/api/v1/image/" + product.id + ".jpg"}/>
             </picture>
             <div>
                 <p>{product.name}</p>

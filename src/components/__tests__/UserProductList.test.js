@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import UserProductList from "./UserProductList";
+import UserProductList from "../UserProductList";
 const category = {
 	"id": "5bc9a87d76e3833f73511a17",
 	"description": "Hi Test",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Admin from './Admin';
+import Admin from '../Admin';
 describe('Admin', () => {
     it('renders correctly', () => {
       const wrapper = shallow(<Admin />);
